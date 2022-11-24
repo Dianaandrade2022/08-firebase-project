@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s12 m7">
         
-        <card-project/>
+        <card-project :data="projects"/>
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
     import CardProject from './CardProject.vue'
 export default {
   data:()=>({
-    projects:null,
+    projects:String,
   }),
     components:{
         CardProject,
@@ -21,10 +21,12 @@ export default {
 
     },methods:{
       async getProjects(){
-        //link del realtime database de cada uno
         const res = await fetch("https://crud-vue-4b-92ebf-default-rtdb.firebaseio.com/projects/project.json");
         const data = await res.json();
+        this.projects = data;
         console.log(data);
+        console.log(this.projects);
+
       },
     },
 };

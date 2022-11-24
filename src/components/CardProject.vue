@@ -2,8 +2,8 @@
     <div class="card horizontal">
         <div class="card-stacked">
             <div class="card-content">
-                <span class="card-title">Proyecto 1</span>
-                <p> Descripción del proyecto</p>
+                <span class="card-title">{{data.name}}</span>
+                <p>{{data.description}}</p>
                 <p>
                     Tecnologías:
                 </p>
@@ -18,8 +18,10 @@
 
 <script>
 export default {
-
-}
+    props:{
+        data:Object,
+    },
+};
 </script>
 
 <style>
