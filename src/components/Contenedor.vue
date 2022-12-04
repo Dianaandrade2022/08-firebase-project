@@ -11,7 +11,7 @@
     import CardProject from './CardProject.vue'
 export default {
   data:()=>({
-    projects:String,
+    projects:[],
   }),
     components:{
         CardProject,
@@ -23,8 +23,11 @@ export default {
       async getProjects(){
         const res = await fetch("https://crud-vue-4b-92ebf-default-rtdb.firebaseio.com/projects/project.json");
         const data = await res.json();
-        this.projects = data;
-        console.log(data);
+
+        for (let index in data) {
+          this.projects.push(data[index]);
+          console.log(data[index]);
+        }
         console.log(this.projects);
 
       },
