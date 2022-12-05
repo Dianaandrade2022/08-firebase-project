@@ -1,8 +1,9 @@
 <template>
   <div class="row">
-    <div class="col s12 m7">
-        
-        <card-project :data="projects"/>
+    <div class="col s12 m7" >
+     
+        <card-project :data="projects"
+        />
     </div>
   </div>
 </template>
@@ -23,14 +24,11 @@ export default {
       async getProjects(){
         const res = await fetch("https://crud-vue-4b-92ebf-default-rtdb.firebaseio.com/projects/project.json");
         const data = await res.json();
-
         for (let index in data) {
           this.projects.push(data[index]);
-          console.log(data[index]);
         }
-        console.log(this.projects);
-
       },
+      
     },
 };
 </script>

@@ -40,7 +40,6 @@
                 </button>
             </div>
         </form>
-        {{project}}
     </div>
   </div>
 </template>
@@ -68,8 +67,8 @@ export default {
         // const data = await res.json();
         // this.projects = data;
         // console.log(data);
-
       },
+      
     },
 };
 </script>
